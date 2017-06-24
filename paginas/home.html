@@ -34,27 +34,27 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    <div data-role="page" style="background:#F3F3F3;">
+	    <div data-role="page" style="background:url(../img/006.png) top center repeat-x #F3F3F3;">
 
 			<div role="main" class="ui-content">
 				<div id="id_conteudo_home" style="text-align:center; padding:0px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:center; font-weight:normal;">
-					<img src="../img/cema.png" alt="Cema" width="90%" style="margin:-20px 0px 0px 0px;">
+					<img src="../img/cema.png" alt="Cema" width="90%" style="margin:-30px 0px 20px 0px;">
 					<div class="unidades">
 						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
-						<div class="unidades-texto">Unidade Cema 01 <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+						<div class="unidades-texto">Unidade Cema 01 &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></div>
 					</div>
 					<div class="unidades">
 						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
-						<div class="unidades-texto">Unidade Cema 02 <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+						<div class="unidades-texto">Unidade Cema 02 &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape-bloco2" style="background-image:url(../img/icon_01.png);">Nova</div>
-				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_02.png);">Agendado</div>
-				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_03.png);">Cancelar</div>
-				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_04.png);">Cadastro</div>
+				<div class="botoes-rodape-bloco2" id="home-rodape01" style="background-image:url(../img/icon_01.png);">Nova</div>
+				<div class="botoes-rodape-bloco1" id="home-rodape02" style="background-image:url(../img/icon_02.png);">Agendado</div>
+				<div class="botoes-rodape-bloco1" id="home-rodape03" style="background-image:url(../img/icon_03.png);">Cancelar</div>
+				<div class="botoes-rodape-bloco1" id="home-rodape04" style="background-image:url(../img/icon_04.png);">Cadastro</div>
 			</div>
 		
 			
@@ -62,16 +62,11 @@
 				
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				
-				$('.menu_lateral_botao_abrir').click(function(){
-				    $('.menu_lateral').show();
-			    });
-				
-				$('.home-botao1').click(function(){ $.mobile.changePage("agenda.html", { transition: "fade", changeHash: false }); });
-				$('.home-botao2').click(function(){ $.mobile.changePage("mapa.html", { transition: "fade", changeHash: false }); });
-				$('.home-botao3').click(function(){ $.mobile.changePage("fornecedores.html", { transition: "fade", changeHash: false }); });
-				$('.home-botao4').click(function(){ $.mobile.changePage("mensagens.html", { transition: "fade", changeHash: false }); });
-				$('.home-botao5').click(function(){ $.mobile.changePage("minhas-informacoes.html", { transition: "fade", changeHash: false }); });
-				$('.home-botao6').click(function(){
+				$('.home-rodape01').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+				$('.home-rodape02').click(function(){ $.mobile.changePage("agendado.html", { transition: "fade", changeHash: false }); });
+				$('.home-rodape03').click(function(){ $.mobile.changePage("cancelar.html", { transition: "fade", changeHash: false }); });
+				$('.home-rodape04').click(function(){ $.mobile.changePage("meu-cadastro.html", { transition: "fade", changeHash: false }); });
+				$('.home-sair').click(function(){
 						window.localStorage.setItem('id_usuarios','');
 						$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});

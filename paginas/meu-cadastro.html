@@ -43,24 +43,7 @@
 
 			<div role="main" class="ui-content">
 				<div id="id_conteudo_cadastro" style="text-align:center; padding:40px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
-					<input type="text" id="cadastro_nome" placeholder="Nome" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_sobrenome" placeholder="Sobrenome" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<br>
-					<h3>Dados de Login</h3>
-					<input type="email" id="cadastro_email" placeholder="E-mail" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="password" id="cadastro_senha" placeholder="Senha" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="password" id="cadastro_confirme_senha" placeholder="Confirme a Senha" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<br>
-					<h3>Endereço</h3>					
-					<input type="text" id="cadastro_cep" placeholder="Cep" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_endereco" placeholder="Endereço" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_numero" placeholder="Número" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_complemento" placeholder="Complemento" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_estado" placeholder="Estado" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_cidade" placeholder="Cidade" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					<input type="text" id="cadastro_bairro" placeholder="Bairro" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
-					
-					<div style="border:1px solid #214629; border-radius:6px; background:#FFF; color:#214629; padding:10px; margin-top:20px; text-shadow: none; text-transform:none; text-align:center;" id="bt_cadastro_salvar">Alterar Meu Cadastro</div>
+
 				</div>
 			</div>
 		
@@ -75,49 +58,10 @@
 			
 			<script>
 				
-				$('#cadastro_cep').mask('99999-999');
+				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				
-				$("#bt_cadastro_salvar").click(function(){
-					var nome = $('#cadastro_nome').val();
-					var sobrenome = $('#cadastro_sobrenome').val();
-					var email = $('#cadastro_email').val();
-					var senha = $('#cadastro_senha').val();
-					var confirme_senha = $('#cadastro_confirme_senha').val();
-					
-					var cep = $('#cadastro_cep').val();
-					var endereco = $('#cadastro_endereco').val();
-					var numero = $('#cadastro_numero').val();
-					var complemento = $('#cadastro_complemento').val();
-					var estado = $('#cadastro_estado').val();
-					var cidade = $('#cadastro_cidade').val();
-					var bairro = $('#cadastro_bairro').val();
-					
-					if(nome==""){ alert("O campo Nome deve ser preenchido"); return false; }
-					if(sobrenome==""){ alert("O campo Sobrenome deve ser preenchido"); return false; }
-					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
-					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
-					if(confirme_senha==""){ alert("O campo Confirme a Senha deve ser preenchido"); return false; }
-					if(confirme_senha!=senha){ alert("As senha informadas não são iguais"); return false; }
-					
-					if(cep==""){ alert("O campo CEP deve ser preenchido"); return false; }
-					if(endereco==""){ alert("O campo Endereço deve ser preenchido"); return false; }
-					if(numero==""){ alert("O campo Número deve ser preenchido"); return false; }
-					if(estado==""){ alert("O campo Estado deve ser preenchido"); return false; }
-					if(cidade==""){ alert("O campo Cidade deve ser preenchido"); return false; }
-					if(bairro==""){ alert("O campo Bairro deve ser preenchido"); return false; }
-					
-
-					
-					$.get("http://cema.projetotemporario.com.br/app_api/alterar-cadastro.php", { nome:nome, sobrenome:sobrenome, email:email, senha:senha, cep:cep, endereco:endereco, numero:numero, complemento:complemento, estado:estado, cidade:cidade, bairro:bairro }, function(data){
-						if(data=="ERRO_EMAIL"){
-							alert("Esse E-mail já foi utilizado em outro Cadastro");
-						}else if(data=="OK"){
-							$.mobile.changePage("meu-cadastro-obrigado.html", { transition: "fade", changeHash: false });
-						}else{
-							alert("Não foi possuível alterar o seu cadastro, tente novamente mais tarde!");
-						}
-					});
-					
+				$.get("meu-cadastro.php", { id_usuarios:id_usuarios }, function(data){
+					$('#id_conteudo_cadastro').html(data);
 				});
 				
 				$('#meu-cadastro-rodape01').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });

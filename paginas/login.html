@@ -34,9 +34,9 @@
 		<script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
 	</head>
     <body>
-	    <div data-role="page" style="background:#FFF; background-size:cover; text-align:center;">
-			<div style="width:300px; height:440px; position:fixed; top:50%; left:50%; margin:-220px 0px 0px -150px;">
-			    <img src="../img/cema.png" alt="Cema" width="90%" style="margin:0px 0px 30px 0px;">
+	    <div data-role="page" style="background:url(../img/005.png) top center repeat-x #FFF; text-align:center;">
+			<div style="width:300px; height:440px; position:fixed; top:50%; left:50%; margin:-240px 0px 0px -150px;">
+			    <img src="../img/cema.png" alt="Cema" width="90%" style="margin:0px 0px 50px 0px;">
 			    <br>
 			  <input type="email" id="login_email" placeholder="E-mail" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
 			  <input type="password" id="login_senha" placeholder="Senha" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
@@ -62,7 +62,7 @@
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
 					
-					$.get("https://wezon.com.br/app_api/login.php", { email:email, senha:senha }, function(data){
+					$.get("http://cema.projetotemporario.com.br/app_api/login.php", { email:email, senha:senha }, function(data){
 						if(data=="ERRO"){
 							alert("O E-mail ou a Senha utilizados não são válidos");
 						}else{

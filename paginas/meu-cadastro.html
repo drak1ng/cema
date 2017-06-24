@@ -62,6 +62,7 @@
 				
 				$.get("http://cema.projetotemporario.com.br/app_api/meu-cadastro.php", { id_usuarios:id_usuarios }, function(data){
 					$('#id_conteudo_cadastro').html(data);
+					$('#id_conteudo_cadastro').enhanceWithin();
 				});
 				
 				$('#meu-cadastro-rodape01').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });

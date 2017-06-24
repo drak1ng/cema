@@ -35,36 +35,32 @@
 	</head>
     <body>
 	    <div data-role="page" style="background:#F3F3F3;">
-		    <div class="menu_lateral"></div>
-		    <div class="topo">
-			    <div class="logotipo" id="configuracao_logotipo">
-				    <div id="bt_voltar_home" class="menu_lateral_botao_abrir" style='width:40px; height:38px; float:left; margin:-5px 0px; background:url(../img/001.png) center center no-repeat;'></div>
-				    <div style="margin:0px 50px; text-align:center;"><img src="../img/logo.png" alt="logo2" height="32" /></div>
-				</div>
-			    <div class="titulo_tela">
-					<div style='margin:0px 80px;'>HOME</div>
-				</div>
-		    </div>
 
 			<div role="main" class="ui-content">
-				<div id="id_conteudo_home" style="text-align:center; padding:100px 0px 0px 0px; margin-left:-10px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
-					<div class="home-botao1">Agenda</div>
-					<div class="home-botao2">Mapa</div>
-					<div class="home-botao3">Fornecedores</div>
-					<div class="home-botao4">Chat</div>
-					<div class="home-botao5">Meus Dados</div>
-					<div class="home-botao6">Sair</div>
+				<div id="id_conteudo_home" style="text-align:center; padding:0px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:center; font-weight:normal;">
+					<img src="../img/cema.png" alt="Cema" width="90%" style="margin:0px 0px 0px 0px;">
+					<div class="unidades">
+						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
+						<div class="unidades-texto">Unidade Cema 01 <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+					</div>
+					<div class="unidades">
+						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
+						<div class="unidades-texto">Unidade Cema 02 <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+					</div>
 				</div>
+			</div>
+			
+			<div class="botoes-rodape">
+				<div class="botoes-rodape-bloco2" style="background-image:url(../img/icon_01.png);">Nova</div>
+				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_02.png);">Agendado</div>
+				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_03.png);">Cancelar</div>
+				<div class="botoes-rodape-bloco1" style="background-image:url(../img/icon_04.png);">Cadastro</div>
 			</div>
 		
 			
 			<script>
 				
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
-				
-				if(tipo_usuarios!="COLABORADOR"){ $('.home-botao2').hide(); $('.home-botao4').hide(); }
-				
-				$.get("menu_lateral.html", function(data){ $('.menu_lateral').html(data); });
 				
 				$('.menu_lateral_botao_abrir').click(function(){
 				    $('.menu_lateral').show();

@@ -216,8 +216,8 @@ h1 {
 .lista-especialidades-item i	{ padding:0px 15px 0px 5px; font-size:20px; color:#0a7321; font-size:sans-serif; }
 
 .lista-medicos					{ margin:-21px -15px 0px -15px; }
-.lista-medicos-item				{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; }
-.lista-medicos-item span		{ display:block; font-size:12px; }
+.lista-medicos-item				{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; color:#333; }
+.lista-medicos-item span		{ display:block; font-size:12px; color:#999; }
 .lista-medicos-item b			{ display:block; font-size:12px; color:#00532F; }
 .lista-medicos-item-imagem		{ width:50px; height:50px; border-radius:50px; float:left; margin-right:10px; background:center center no-repeat #ebebeb; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
 

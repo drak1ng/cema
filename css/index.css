@@ -206,34 +206,34 @@ h1 {
 	height:130px !important;
 }
 
-.unidades						{ height:135px; }
-.unidades-imagem				{ height:115px; border-radius:6px; background:center center no-repeat #FFF; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
-.unidades-texto					{ height:40px; background:url(../img/007.png) center bottom repeat-x; border-radius:6px; padding:10px; padding-top:75px; border:1px solid #CCC; border-top:0px; color:#FFF; text-align:left; font-size:22px; text-transform:uppercase; }
-.unidades-texto span			{ display:block; font-size:14px; text-transform:none; }
+.unidades							{ height:135px; }
+.unidades-imagem					{ height:115px; border-radius:6px; background:center center no-repeat #FFF; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
+.unidades-texto						{ height:40px; background:url(../img/007.png) center bottom repeat-x; border-radius:6px; padding:10px; padding-top:75px; border:1px solid #CCC; border-top:0px; color:#FFF; text-align:left; font-size:22px; text-transform:uppercase; }
+.unidades-texto span				{ display:block; font-size:14px; text-transform:none; }
 
-.lista-especialidades			{ margin:-21px -15px -66px -15px; }
-.lista-especialidades-item		{ border-top:1px solid #CCC; padding:20px 10px; }
-.lista-especialidades-item i	{ padding:0px 15px 0px 5px; font-size:20px; color:#0a7321; font-size:sans-serif; }
+.lista-especialidades				{ margin:-21px -15px -66px -15px; }
+.lista-especialidades-item			{ border-top:1px solid #CCC; padding:20px 10px; }
+.lista-especialidades-item i		{ padding:0px 15px 0px 5px; font-size:20px; color:#0a7321; font-size:sans-serif; }
 
-.lista-medicos					{ margin:-21px -15px 0px -15px; }
-.lista-medicos-item				{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; color:#333; }
-.lista-medicos-item span		{ display:block; font-size:12px; color:#999; }
-.lista-medicos-item b			{ display:block; font-size:12px; color:#00532F; }
-.lista-medicos-item-imagem		{ width:50px; height:50px; border-radius:50px; float:left; margin-right:10px; background:center center no-repeat #ebebeb; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
+.lista-medicos						{ margin:-21px -15px 0px -15px; }
+.lista-medicos-item					{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; color:#333; }
+.lista-medicos-item span			{ display:block; font-size:12px; color:#999; }
+.lista-medicos-item b				{ display:block; font-size:12px; color:#00532F; }
+.lista-medicos-item-imagem			{ width:50px; height:50px; border-radius:50px; float:left; margin-right:10px; background:center center no-repeat #ebebeb; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
 
-.info-medicos					{ margin:-21px -15px 0px -15px; padding:20px 10px; font-size:16px; background:#FFF; color:#00532F; }
-.info-medicos span				{ display:block; font-size:12px; color:#00532F; }
-.info-medicos b					{ display:block; font-size:12px; color:#999; }
-.info-medicos-item-imagem		{ width:50px; height:50px; border-radius:50px; float:left; margin-right:10px; background:center center no-repeat #ebebeb; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
+.info-medicos						{ margin:-21px -15px 0px -15px; padding:20px 10px; font-size:16px; background:#FFF; color:#00532F; }
+.info-medicos span					{ display:block; font-size:12px; color:#00532F; }
+.info-medicos b						{ display:block; font-size:12px; color:#999; }
+.info-medicos-item-imagem			{ width:50px; height:50px; border-radius:50px; float:left; margin-right:10px; background:center center no-repeat #ebebeb; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
 
-.lista-horarios					{ margin:-21px -15px 0px -15px; }
-.lista-horarios-item			{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; }
+.lista-horarios						{ margin:-21px -15px 0px -15px; }
+.lista-horarios-item				{ border-top:1px solid #CCC; padding:20px 10px; font-size:16px; }
 
-.medico-calendaio				{ padding:20px 10px 10px 10px; background:#f5f5f5; margin:0px -16px; border-bottom:1px solid #e0e0e0; }
-.medico-calendaio-botao			{  }
-.medico-calendaio-botao-icon	{ min-width:10px; float:left; font-size:27px; padding-right:15px; padding-left:5px; color:#0a7321; }
-.medico-calendaio-botao-texto	{ font-size:14px; color:#0a7321; padding-top:2px; }
-.medico-calendaio-botao-texto b	{ display:block; text-transform:none; font-weight:normal; font-size:13px; color:#999; }
+.medico-calendaio					{ padding:20px 10px 10px 10px; background:#f5f5f5; margin:0px -16px; border-bottom:1px solid #e0e0e0; }
+.medico-calendaio-botao				{  }
+.medico-calendaio-botao-icon		{ min-width:10px; float:left; font-size:27px; padding-right:15px; padding-left:5px; color:#0a7321; }
+.medico-calendaio-botao-texto		{ font-size:14px; color:#0a7321; padding-top:2px; }
+.medico-calendaio-botao-texto b		{ display:block; text-transform:none; font-weight:normal; font-size:13px; color:#999; }
 
 .lista-botoes {
 	background:10px 3px no-repeat;

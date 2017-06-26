@@ -30,9 +30,15 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
         <title>CEMA</title>
+
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
-		<script type="text/javascript" src="../js/cordova.js"></script>
+		<script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+		<script type="text/javascript" src="../js/moment-with-locales.js"></script>
+		<script type="text/javascript" src="../js/clndr.min.js"></script>
+		<script type="text/javascript" src="../js/underscore.js"></script>
+		<script type="text/javascript" src="../js/rating.min.js"></script>
+
 	</head>
     <body>
 	    <div data-role="page" style="background:#FFF;">
@@ -44,7 +50,13 @@
 		    </div>
 
 			<div role="main" class="ui-content">
-				<div class="cal1"></div>
+				<div class="medico-calendaio">
+					<div class="medico-calendaio-botao">
+						<div class="medico-calendaio-botao-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+						<div class="medico-calendaio-botao-texto">Data<b id='data-titulo-exibicao'>Próximos 7 dias</b></div>
+					</div>
+					<div class="cal1" style="display:none"></div>
+				</div>
 				<div id="id_conteudo_medicos" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
 					<div style="padding-top:120px; text-align:center; font-size:13px;">
 						<img src="../img/loading.gif" width="110" height="10" /><br><br>
@@ -67,9 +79,11 @@
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
 				
+				/*
 				$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade }, function(data){
 					$('#id_conteudo_medicos').html(data);
 				});
+				*/
 				
 				$('#bt_medicos_voltar').click(function(){ $.mobile.changePage("especialidades.html", { transition: "fade", changeHash: false }); });
 								
@@ -77,6 +91,10 @@
 				$('#medicos-rodape02').click(function(){ $.mobile.changePage("agendado.html", { transition: "fade", changeHash: false }); });
 				$('#medicos-rodape03').click(function(){ $.mobile.changePage("cancelar.html", { transition: "fade", changeHash: false }); });
 				$('#medicos-rodape04').click(function(){ $.mobile.changePage("meu-cadastro.html", { transition: "fade", changeHash: false }); });
+				
+				$('.medico-calendaio-botao').click(function(){
+					$('.cal1').slideToggle();
+				});
 				
 				// Call this from the developer console and you can control both instances
 				var calendars = {};
@@ -133,6 +151,54 @@
 				        ordinal : '%dº'
 				    });
 				}));
+				
+				$(document).ready( function() {
+				    var thisMonth = moment().format('YYYY-MM');
+				    var eventArray = [
+				        {
+				            date: thisMonth + '-27',
+				            title: 'Single Day Event'
+				        }
+				    ];
+				    
+				    calendars.clndr1 = $('.cal1').clndr({
+				        //events: eventArray,
+				        clickEvents: {
+				            click: function (target) {
+								$('.cal1').hide();
+								$('#data-titulo-exibicao').html(target.date._i);
+								$('#id_conteudo_medicos').html('<div style="padding-top:120px; text-align:center; font-size:13px;"><img src="../img/loading.gif" width="110" height="10" /><br><br>Aguarde carregando...</div>');
+								$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, data:target.date._i }, function(data){
+									$('#id_conteudo_medicos').html(data);
+								});
+				            }
+				        },
+				        multiDayEvents: {
+				            singleDay: 'date',
+				            endDate: 'endDate',
+				            startDate: 'startDate'
+				        },
+				        showAdjacentMonths: true,
+				        adjacentDaysChangeMonth: false
+				    });
+				
+				    // Bind all clndrs to the left and right arrow keys
+				    $(document).keydown( function(e) {
+				        // Left arrow
+				        if (e.keyCode == 37) {
+				            calendars.clndr1.back();
+				            calendars.clndr2.back();
+				            calendars.clndr3.back();
+				        }
+				
+				        // Right arrow
+				        if (e.keyCode == 39) {
+				            calendars.clndr1.forward();
+				            calendars.clndr2.forward();
+				            calendars.clndr3.forward();
+				        }
+				    });
+				});
 				
 			</script>
 		

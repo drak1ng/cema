@@ -71,6 +71,7 @@
 				
 				$.get("http://cema.projetotemporario.com.br/app_api/marcar.php", { unidade:unidade, especialidade:especialidade, medico:medico, horario:horario }, function(data){
 					$('#id_marcar_horarios').html(data);
+					$('#id_marcar_horarios').enhanceWithin();
 				});
 				
 				$('#bt_marcar_voltar').click(function(){ $.mobile.changePage("horarios.html", { transition: "fade", changeHash: false }); });

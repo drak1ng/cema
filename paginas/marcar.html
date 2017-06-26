@@ -66,10 +66,11 @@
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
 				var medico = window.localStorage.getItem('medico');
+				var data = window.localStorage.getItem('data');
 				var horario = window.localStorage.getItem('horario');
 				
 				
-				$.get("http://cema.projetotemporario.com.br/app_api/marcar.php", { unidade:unidade, especialidade:especialidade, medico:medico, horario:horario }, function(data){
+				$.get("http://cema.projetotemporario.com.br/app_api/marcar.php", { unidade:unidade, especialidade:especialidade, medico:medico, data:data, horario:horario }, function(data){
 					$('#id_marcar_horarios').html(data);
 					$('#id_marcar_horarios').enhanceWithin();
 				});

@@ -40,14 +40,7 @@
 				<img src="../img/cema.png" alt="Cema" width="250" style="margin:-30px 0px 20px 0px;">
 					
 				<div id="id_conteudo_home" style="text-align:center; padding:0px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:center; font-weight:normal;">
-					<div class="unidades" rel="1">
-						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
-						<div class="unidades-texto">Unidade Cema 01 &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></div>
-					</div>
-					<div class="unidades" rel="2">
-						<div class="unidades-imagem" style='background-image:url(../img/temp01.jpg);'></div>
-						<div class="unidades-texto">Unidade Cema 02 &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></div>
-					</div>
+					
 				</div>
 			</div>
 			
@@ -63,12 +56,6 @@
 				
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				
-				$('.unidades').click(function(){
-					var x = $(this).attr('rel');
-					window.localStorage.setItem('unidade',x);
-					$.mobile.changePage("especialidades.html", { transition: "fade", changeHash: false });
-				});
-				
 				$('#home-rodape01').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
 				$('#home-rodape02').click(function(){ $.mobile.changePage("agendado.html", { transition: "fade", changeHash: false }); });
 				$('#home-rodape03').click(function(){ $.mobile.changePage("cancelar.html", { transition: "fade", changeHash: false }); });
@@ -77,6 +64,11 @@
 						window.localStorage.setItem('id_usuarios','');
 						$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
+				
+				$.get('http://cema.projetotemporario.com.br/app_api/lista-unidades.php', function(data){
+					$('#id_conteudo_home').html(data);
+				});
+				
 			</script>
 		
 		</div>

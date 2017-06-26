@@ -44,49 +44,10 @@
 		    </div>
 
 			<div role="main" class="ui-content">
-				<div id="id_conteudo_cadastro" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
-					<div class="lista-especialidades">
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>ACUPUNTURA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>ALERGIA E IMUNOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>CARDIOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>CARDIOLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>CIRURGIA GERAL</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>CIRURGIA PLÁSTICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>CIRURGIA VASCULAR</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>CLINICA GERAL</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>COLOPROCTOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>DERMATOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>ENDOCRINOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>ENDOCRINOLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>GASTROENTEROLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>GASTROENTEROLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>GERIATRIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>GINECOLOGIA E OBSTETRICIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>HEMATOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>HEPATOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>HOMEOPATIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>INFECTOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>MASTOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>NEFROLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>NEFROLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>NEUROLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>NEUROLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>NUTRIÇÃO</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>NUTROLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>ODONTOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>OFTALMOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>OFTALMOLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>ORTOPEDIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>OTORRINOLARINGOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>PEDIATRIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>PNEUMOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>PNEUMOLOGIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>PSICOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>PSIQUIATRIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eyedropper" aria-hidden="true"></i>PSIQUIATRIA PEDIATRICA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-eye" aria-hidden="true"></i>QUIROPRAXIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>REUMATOLOGIA</div>
-						<div class="lista-especialidades-item"><i class="fa fa-deaf" aria-hidden="true"></i>UROLOGIA</div>
+				<div id="id_conteudo_especialidades" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
+					<div style="padding-top:120px; text-align:center; font-size:13px;">
+						<img src="../img/loading.gif" width="110" height="10" /><br><br>
+						Aguarde carregando...
 					</div>
 				</div>
 			</div>
@@ -104,7 +65,9 @@
 				
 				var unidade = window.localStorage.getItem('unidade');
 				
-				$('#especialidade-titulo').html("<b> UNIDADE 0"+unidade+"</b>");
+				$.get("http://cema.projetotemporario.com.br/app_api/especialidades.php", { unidade:unidade }, function(data){
+					$('#id_conteudo_especialidades').html(data);
+				});
 				
 				$('#bt_especialidade_voltar').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
 								

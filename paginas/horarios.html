@@ -66,8 +66,9 @@
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
 				var medico = window.localStorage.getItem('medico');
+				var data = window.localStorage.getItem('data');
 				
-				$.get("http://cema.projetotemporario.com.br/app_api/horarios.php", { unidade:unidade, especialidade:especialidade, medico:medico }, function(data){
+				$.get("http://cema.projetotemporario.com.br/app_api/horarios.php", { unidade:unidade, especialidade:especialidade, medico:medico, data:data }, function(data){
 					$('#id_conteudo_horarios').html(data);
 				});
 				

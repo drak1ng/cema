@@ -45,13 +45,10 @@
 
 			<div role="main" class="ui-content">
 				<div id="id_conteudo_medicos" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
-<div class="lista-medicos">
-	<div class='lista-medicos-item' rel='1'>Rodrigo Neto Misquini<span>CRM: 123456</span></div>
-	<div class='lista-medicos-item' rel='1'>Rodrigo Neto Misquini<span>CRM: 123456</span></div>
-	<div class='lista-medicos-item' rel='1'>Rodrigo Neto Misquini<span>CRM: 123456</span></div>
-	<div class='lista-medicos-item' rel='1'>Rodrigo Neto Misquini<span>CRM: 123456</span></div>
-	<div class='lista-medicos-item' rel='1'>Rodrigo Neto Misquini<span>CRM: 123456</span></div>
-</div>
+					<div style="padding-top:120px; text-align:center; font-size:13px;">
+						<img src="../img/loading.gif" width="110" height="10" /><br><br>
+						Aguarde carregando...
+					</div>
 				</div>
 			</div>
 		
@@ -69,11 +66,9 @@
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
 				
-				/*
 				$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade }, function(data){
 					$('#id_conteudo_medicos').html(data);
 				});
-				*/
 				
 				$('#bt_medicos_voltar').click(function(){ $.mobile.changePage("especialidades.html", { transition: "fade", changeHash: false }); });
 								

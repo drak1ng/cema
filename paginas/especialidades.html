@@ -63,6 +63,8 @@
 			
 			<script>
 				
+				window.localStorage.setItem('data_calendario','');
+				
 				var unidade = window.localStorage.getItem('unidade');
 				
 				$.get("http://cema.projetotemporario.com.br/app_api/especialidades.php", { unidade:unidade }, function(data){

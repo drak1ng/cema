@@ -207,9 +207,9 @@ h1 {
 }
 
 .unidades				{ height:135px; }
-.unidades-imagem		{ height:115px; border-radius:6px; background:center center no-repeat #FFF; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
-.unidades-texto			{ height:30px; background:url(../img/007.png) center bottom repeat-x; border-radius:6px; padding:10px; padding-top:85px; border:1px solid #CCC; border-top:0px; color:#FFF; text-align:left; }
-.unidades-texto span	{ display:block; font-size:12px; }
+.unidades-imagem		{ height:115px; border-radius:80px; background:center center no-repeat #FFF; background-size:cover; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
+.unidades-texto			{ height:30px; background:url(../img/007.png) center bottom repeat-x; border-radius:6px; padding:10px; padding-top:85px; border:1px solid #CCC; border-top:0px; color:#FFF; text-align:left; font-size:20px; }
+.unidades-texto span	{ display:block; font-size:13px; }
 
 .lista-especialidades			{ margin:-21px -15px -66px -15px; }
 .lista-especialidades-item		{ border-top:1px solid #CCC; padding:20px 10px; }

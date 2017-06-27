@@ -42,8 +42,11 @@
 		    </div>
 
 			<div role="main" class="ui-content">
-				<div id="id_conteudo_cadastro" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
-					EM DESENVOLVIMENTO
+				<div id="id_conteudo_agendamentos" style="text-align:center; padding:25px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; font-weight:normal;">
+					<div style="padding-top:120px; text-align:center; font-size:13px;">
+						<img src="../img/loading.gif" width="110" height="10" /><br><br>
+						Aguarde carregando...
+					</div>
 				</div>
 			</div>
 		
@@ -57,6 +60,12 @@
 			</div>
 			
 			<script>
+				
+				var id_usuarios = window.localStorage.getItem('id_usuarios');
+				
+				$.get("http://cema.projetotemporario.com.br/app_api/agendamentos.php", { id_usuarios:id_usuarios }, function(data){
+					$('#id_conteudo_agendamentos').html(data);
+				});
 				
 				$('#agendamento-rodape01').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
 				$('#agendamento-rodape03').click(function(){ $.mobile.changePage("cancelar.html", { transition: "fade", changeHash: false }); });

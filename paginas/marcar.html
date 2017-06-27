@@ -63,6 +63,7 @@
 			
 			<script>
 				
+				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
 				var medico = window.localStorage.getItem('medico');
@@ -70,7 +71,7 @@
 				var horario = window.localStorage.getItem('horario');
 				
 				
-				$.get("http://cema.projetotemporario.com.br/app_api/marcar.php", { unidade:unidade, especialidade:especialidade, medico:medico, data:data, horario:horario }, function(data){
+				$.get("http://cema.projetotemporario.com.br/app_api/marcar.php", { id_usuarios:id_usuarios, unidade:unidade, especialidade:especialidade, medico:medico, data:data, horario:horario }, function(data){
 					$('#id_marcar_horarios').html(data);
 					$('#id_marcar_horarios').enhanceWithin();
 				});

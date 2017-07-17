@@ -78,16 +78,17 @@
 				
 				var unidade = window.localStorage.getItem('unidade');
 				var especialidade = window.localStorage.getItem('especialidade');
+				var subespecialidade = window.localStorage.getItem('subespecialidade');
 				var data_calendario = window.localStorage.getItem('data_calendario');
 				
 				if(data_calendario!="" && data_calendario!=null){
 					var data_split = data_calendario.split("-");
 					$('#data-titulo-exibicao').html(data_split[2]+"/"+data_split[1]+"/"+data_split[0]);
-					$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, data:data_calendario }, function(data){
+					$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, subespecialidade:subespecialidade, data:data_calendario }, function(data){
 						$('#id_conteudo_medicos').html(data);
 					});
 				}else{
-					$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade }, function(data){
+					$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, subespecialidade:subespecialidade }, function(data){
 						$('#id_conteudo_medicos').html(data);
 					});
 				}

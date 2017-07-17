@@ -55,6 +55,9 @@
 					<br>
 					<h3>Endereço</h3>					
 					<input type="text" id="cadastro_cep" placeholder="Cep" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<div style="border:1px solid #214629; border-radius:6px; background:#FFF; color:#214629; padding:10px; margin-top:20px; text-shadow: none; text-transform:none; text-align:center;">Consultar CEP</div>
+					<div style='clear:both;'></div>
+					<br>
 					<input type="text" id="cadastro_endereco" placeholder="Endereço" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
 					<input type="text" id="cadastro_numero" placeholder="Número" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
 					<input type="text" id="cadastro_complemento" placeholder="Complemento" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
@@ -70,6 +73,10 @@
 			<script>
 				
 				$('#cadastro_cep').mask('99999-999');
+				
+				$('#cadastro_cep').blur(function(){
+					alert('Teste');
+				});
 				
 				$("#bt_cadastro_salvar").click(function(){
 					var nome = $('#cadastro_nome').val();

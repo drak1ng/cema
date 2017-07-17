@@ -47,6 +47,19 @@
 					<p style='margin-bottom:30px;'>Preencha todos os campos abaixo para se cadastrar e ter acesso ao aplicativo.</p>
 					<input type="text" id="cadastro_nome" placeholder="Nome" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
 					<input type="text" id="cadastro_sobrenome" placeholder="Sobrenome" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<input type="text" id="cadastro_nascimento" placeholder="Nascimento" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<select id="cadastro_sexo" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+						<option value="">Sexo</option>
+						<option value=""></option>
+						<option value="">Masculino</option>
+						<option value="">Feminino</option>
+					</select>
+					<input type="text" id="cadastro_telefone" placeholder="Telefone" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<input type="text" id="cadastro_celular" placeholder="Celular" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<br>
+					<h3>Documentos</h3>
+					<input type="text" id="cadastro_responsavel_legal" placeholder="Responsável legal (no caso de menor)" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
+					<input type="text" id="cadastro_documento" placeholder="(CPF / RG / Certidão de Nascimento)" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
 					<br>
 					<h3>Dados de Login</h3>
 					<input type="email" id="cadastro_email" placeholder="E-mail" style="border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF;">
@@ -69,9 +82,15 @@
 				</div>
 			</div>
 		
+			<style>
+				.ui-select .ui-btn { border:0px solid #FFF; border-bottom:1px solid #CCC; border-radius:0px; background:#FFF; text-align:left; font-size:14px; color:#666; padding-left:5px; font-weight:normal; text-shadow:0 0 0 #fff; -webkit-box-shadow: 0 0 0 rgba(0,0,0,0); -moz-box-shadow: 0 0 0 rgba(0,0,0,0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+			</style>
 			
 			<script>
 				
+				$('#cadastro_nascimento').mask('99/99/9999');
+				$('#cadastro_telefone').mask('(99) 9999-9999');
+				$('#cadastro_celular').mask('(99) 99999-9999');
 				$('#cadastro_cep').mask('99999-999');
 				
 				$('#cadastro_cep').blur(function(){
@@ -84,7 +103,13 @@
 				$("#bt_cadastro_salvar").click(function(){
 					var nome = $('#cadastro_nome').val();
 					var sobrenome = $('#cadastro_sobrenome').val();
+					var nascimento = $('#cadastro_nascimento').val();
+					var sexo = $('#cadastro_sexo').val();
 					var email = $('#cadastro_email').val();
+					var telefone = $('#cadastro_telefone').val();
+					var celular = $('#cadastro_celular').val();
+					var responsavel_legal = $('#cadastro_responsavel_legal').val();
+					var documento = $('#cadastro_documento').val();
 					var senha = $('#cadastro_senha').val();
 					var confirme_senha = $('#cadastro_confirme_senha').val();
 					
@@ -112,7 +137,7 @@
 					
 
 					
-					$.get("http://cema.projetotemporario.com.br/app_api/cadastro.php", { nome:nome, sobrenome:sobrenome, email:email, senha:senha, cep:cep, endereco:endereco, numero:numero, complemento:complemento, estado:estado, cidade:cidade, bairro:bairro }, function(data){
+					$.get("http://cema.projetotemporario.com.br/app_api/cadastro.php", { nome:nome, sobrenome:sobrenome, nascimento:nascimento, sexo:sexo, email:email, telefone:telefone, celular:celular, senha:senha, responsavel_legal:responsavel_legal, documento:documento, cep:cep, endereco:endereco, numero:numero, complemento:complemento, estado:estado, cidade:cidade, bairro:bairro }, function(data){
 						if(data=="ERRO_EMAIL"){
 							alert("Esse E-mail já foi utilizado em outro Cadastro");
 						}else if(data=="OK"){

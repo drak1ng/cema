@@ -75,7 +75,10 @@
 				$('#cadastro_cep').mask('99999-999');
 				
 				$('#cadastro_cep').blur(function(){
-					alert('Teste');
+					$.get("http://cema.projetotemporario.com.br/app_api/cep.php", { tipo:'endereco', cep:$('#cadastro_cep').val() }, function(data){ $('#cadastro_endereco').val(data); });
+					$.get("http://cema.projetotemporario.com.br/app_api/cep.php", { tipo:'bairro', cep:$('#cadastro_cep').val() }, function(data){ $('#cadastro_bairro').val(data); });
+					$.get("http://cema.projetotemporario.com.br/app_api/cep.php", { tipo:'cidade', cep:$('#cadastro_cep').val() }, function(data){ $('#cadastro_cidade').val(data); });
+					$.get("http://cema.projetotemporario.com.br/app_api/cep.php", { tipo:'estado', cep:$('#cadastro_cep').val() }, function(data){ $('#cadastro_estado').val(data); });
 				});
 				
 				$("#bt_cadastro_salvar").click(function(){

@@ -71,7 +71,7 @@
 				alert("Teste "+especialidade);
 				
 				$.get("http://cema.projetotemporario.com.br/app_api/subespecialidades.php", { unidade:unidade, especialidade:especialidade }, function(data){
-					$('#id_conteudo_subespecialidades').html(data);
+					$('#id_conteudo_subespecialidades').html("asdasd");
 				});
 				
 				$('#bt_subespecialidade_voltar').click(function(){ $.mobile.changePage("especialidades.html", { transition: "fade", changeHash: false }); });

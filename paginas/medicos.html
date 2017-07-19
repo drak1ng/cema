@@ -176,9 +176,12 @@
 								window.localStorage.setItem('data_calendario',target.date._i);
 								$('.cal1').hide();
 								var data_split = target.date._i.split("-");
+								
+								var subespecialidade = window.localStorage.getItem('subespecialidade');
+								
 								$('#data-titulo-exibicao').html(data_split[2]+"/"+data_split[1]+"/"+data_split[0]);
 								$('#id_conteudo_medicos').html('<div style="padding-top:120px; text-align:center; font-size:13px;"><img src="../img/loading.gif" width="110" height="10" /><br><br>Aguarde carregando...</div>');
-								$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, data:target.date._i }, function(data){
+								$.get("http://cema.projetotemporario.com.br/app_api/medicos.php", { unidade:unidade, especialidade:especialidade, subespecialidade:subespecialidade, data:target.date._i }, function(data){
 									$('#id_conteudo_medicos').html(data);
 								});
 				            }
